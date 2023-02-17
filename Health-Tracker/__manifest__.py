@@ -3,6 +3,7 @@
     'data':[
         'security/ir.model.access.csv',
         'views/patients_list_view.xml',
+        'views/patients_appointment_view.xml',
         'views/health_menu.xml',
     ],
     'application':True,

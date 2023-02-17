@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 Health-Tracker.access_patients_list,access_patients_list,Health-Tracker.model_patients_list,base.group_user,1,1,1,1
+Health-Tracker.access_patients_appointment,access_patients_appointment,Health-Tracker.model_patients_appointment,base.group_user,1,1,1,1
+Health-Tracker.access_doctors_list,access_doctors_list,Health-Tracker.model_doctors_list,base.group_user,1,1,1,1

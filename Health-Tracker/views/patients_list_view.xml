@@ -15,7 +15,7 @@
     </field>
 </record>
 
-<record id="patients_list_tree_view" model="ir.ui.view">
+<record id="patient_list_view_tree" model="ir.ui.view">
     <field name="name">patients.list.tree</field>
     <field name="model">patients.list</field>
     <field name="arch" type="xml">
@@ -29,6 +29,32 @@
         </tree>    
     </field>
 </record>
+
+<record id="patient_list_view_form" model="ir.ui.view">
+        <field name ="name">patients.list.form</field>
+        <field name ="model">patients.list</field>
+        <field name ="arch" type="xml">
+        <form>
+            <sheet>
+            <div>
+            <h1> <field name ="name" nolabel = "1"/> </h1>
+            </div>
+            <group>
+                <group>
+            <field name ="gender"/>
+            <field name ="contact"/>
+            <field name ="date"/>
+                </group>
+                <group>
+            <field name ="address"/>
+            <field name ="email"/>
+                </group>
+            </group>
+            </sheet>
+        </form>
+
+        </field>
+    </record>
 
 
 

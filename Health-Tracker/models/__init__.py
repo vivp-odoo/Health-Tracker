@@ -1,1 +1,1 @@
-from . import patients_list
+from . import patients_list,patients_appointment,doctors_list

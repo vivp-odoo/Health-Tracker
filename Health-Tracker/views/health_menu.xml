@@ -7,6 +7,10 @@
         <menuitem id="health_menu_action" action="patients_list_action" />
     </menuitem>
 
+    <menuitem id="health_second_level_menu" name="Appointment">
+        <menuitem id="appointment_menu_action" action="patient_appointment_action" />
+    </menuitem>
+
 </menuitem>
 
 </odoo>
