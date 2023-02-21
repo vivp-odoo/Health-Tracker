@@ -2,3 +2,6 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 Health-Tracker.access_patients_list,access_patients_list,Health-Tracker.model_patients_list,base.group_user,1,1,1,1
 Health-Tracker.access_patients_appointment,access_patients_appointment,Health-Tracker.model_patients_appointment,base.group_user,1,1,1,1
 Health-Tracker.access_doctors_list,access_doctors_list,Health-Tracker.model_doctors_list,base.group_user,1,1,1,1
+Health-Tracker.access_medical_history,access_medical_history,Health-Tracker.model_medical_history,base.group_user,1,1,1,1
+Health-Tracker.access_medicine_list,access_medicine_list,Health-Tracker.model_medicine_list,base.group_user,1,1,1,1
+Health-Tracker.access_regular_vitals,access_regular_vitals,Health-Tracker.model_regular_vitals,base.group_user,1,1,1,1

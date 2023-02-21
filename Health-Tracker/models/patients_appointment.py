@@ -7,7 +7,7 @@ class PatientsAppointment(models.Model):
     
     _rec_name = "patient_name"
     patient_name = fields.Many2one("patients.list",string="Patient Name")
-    # contact = fields.Char()
+    contact = fields.Char()
     date = fields.Date(string="Appointment Date",default = lambda self : fields.Date.today() + relativedelta_proxy(days=1))
     doctor = fields.Many2one("doctors.list")
     consulting_fees = fields.Char()
@@ -17,11 +17,12 @@ class PatientsAppointment(models.Model):
     )
     reason = fields.Char(string="Reason")
     notes = fields.Char(string="Notes")
-    medicine_prescribed = fields.Many2many()
-    next_appointment = fields.Many2many()
+    medicine_prescribed = fields.Many2many("medicine.list" , string = "Medicines")
+    next_appointment = fields.Char(string="Next Appointment")
     Treatment = fields.Char()
+    next_step = fields.Char()
     admit = fields.Boolean(string="Admitted")
-    vitals = fields.One2many(string="Vitals")
+    # vitals = fields.One2many(string="Vitals")
     
     
      

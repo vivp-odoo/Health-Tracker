@@ -1,6 +1,6 @@
 from odoo import models,fields
 
-class RegularVitals(models.model):
+class RegularVitals(models.Model):
     _name = "regular.vitals"
     _description="Regular Vital check"
     
