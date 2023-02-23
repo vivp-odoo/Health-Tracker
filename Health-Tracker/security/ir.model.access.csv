@@ -5,3 +5,4 @@ Health-Tracker.access_doctors_list,access_doctors_list,Health-Tracker.model_doct
 Health-Tracker.access_medical_history,access_medical_history,Health-Tracker.model_medical_history,base.group_user,1,1,1,1
 Health-Tracker.access_medicine_list,access_medicine_list,Health-Tracker.model_medicine_list,base.group_user,1,1,1,1
 Health-Tracker.access_regular_vitals,access_regular_vitals,Health-Tracker.model_regular_vitals,base.group_user,1,1,1,1
+Health-Tracker.access_contacts_list,access_contacts_list,Health-Tracker.model_contacts_list,base.group_user,1,1,1,1

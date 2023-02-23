@@ -14,4 +14,3 @@ class RegularVitals(models.Model):
     respiration_rate = fields.Char(string="Respiration Rate")
     note = fields.Char(required = True)
     
-    

@@ -22,7 +22,8 @@
         <tree>
             <field name = "name"/>
             <field name = "gender"/>
-            <field name = "contact"/>
+            <field name = "phone"/>
+            <field name = "phone"/>
             <field name = "date"/>
             <field name = "address"/>
             <field name = "email"/>
@@ -41,21 +42,40 @@
             </div>
             <group>
                 <group>
-            <field name ="gender"/>
-            <field name ="contact"/>
-            <field name ="date"/>
+                    <field name ="address"/>
+                    <field name ="state"/>
+                    <field name ="country"/>
+                    <field name ="street1"/>
+                    <field name ="street2"/>
+                    <field name ="zip"/>
+                    <field name ="date"/>
                 </group>
                 <group>
-            <field name ="address"/>
-            <field name ="email"/>
+                    <field name ="gender"/>
+                    <field name = "phone"/>
+                    <field name = "mobile"/>
+                    <field name ="email"/>
                 </group>
             </group>
             </sheet>
+            <notebook>
+                <page string="">
+
+                </page>
+
+                <page>
+                </page>
+
+                <page>
+                </page>
+
+            </notebook>
         </form>
 
         </field>
     </record>
 
+    
 
 
 </odoo>

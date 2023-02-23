@@ -5,8 +5,14 @@ class PatientsList(models.Model):
     _description="Patients detail"
     
     name=fields.Char(required=True ,string="Patients Name")
-    contact=fields.Char(required=True ,string="Phone no.")
+    phone=fields.Char(string="Phone")
+    mobile=fields.Char(string="Mobile")
+    street1=fields.Char()
+    street2=fields.Char()
+    zip=fields.Char()
     address=fields.Char(string="Address")
+    country = fields.Many2one("res.country",string="Country")
+    state = fields.Many2one("res.country.state",string="State")
     email=fields.Char(string="E-mail")
     date=fields.Date(default = lambda self :fields.Date.today(), string="Registration Date")
     gender=fields.Selection(
@@ -19,5 +25,5 @@ class PatientsList(models.Model):
     medical_history = fields.Char(string="Medical History")
     insurance = fields.Char(string="Insurance")
     notes = fields.Char(string="Notes")
-    
+    contact_ids = fields.One2many("contacts.list","pat_id")
     

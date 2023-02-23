@@ -18,7 +18,7 @@
             <field name ="contact"/>
             <field name ="doctor"/>
             <field name ="consulting_fees"/>
-            <field name ="status"/>
+            <field name ="state"/>
         </tree>
 
         </field>
@@ -29,25 +29,64 @@
         <field name ="model">patients.appointment</field>
         <field name ="arch" type="xml">
         <form>
+            <header>
+                <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+            </header>
+
             <sheet>
+                <widget name="web_ribbon" title="confirmed" bg_color="bg-success" attrs="{'invisible':[('state','!=','confirmed')]}"/>
+                <widget name="web_ribbon" title="cancelled" bg_color="bg-danger"  attrs="{'invisible':[('state','!=','cancelled')]}"/>
+
             <div>
-            <h1> <field name ="patient_name" nolabel = "1"/> </h1>
+                <field name="image" widget="image" options="{'size':[150,150]}"/> <br/> <br/>
+                <h1> <field name ="patient_name" nolabel = "1" placeholder = "Patient Name"/> </h1>
             </div>
+            <br/> 
             <group>
                 <group>
-            <field name ="date"/>
-            <field name ="contact"/>
-            <field name ="doctor"/>
+                    <field name ="date"/>
+                    <field name ="contact" string="Phone no."/>
+                    <field name ="doctor"/>
                 </group>
                 <group>
-            <field name ="consulting_fees"/>
-            <field name ="status"/>
+                    <field name ="consulting_fees"/>
+                    <field name ="state"/>
                 </group>
+    
             </group>
+                    <br/>
+            <notebook>
+                <page string = "Description">
+                    <group>
+                    <field name = "reason" placeholder = "Reason For Appointment"/>
+                    <field name = "treatment" placeholder = "Treatment Method"/>
+                    <field name = "admit" />
+                    <field name = "next_step" placeholder = "Information"/>
+                    <field name = "medicine_prescribed" placeholder = "Medicines" widgets = "many2many_tags"/>
+                    <field name = "next_appointment" placeholder="Date"/>
+                    <field name = "active"/>
+                    </group>
+                </page>
+
+                <page string = "Medical">
+                    <group>
+                        <field name = "vital_ids"/>
+                    </group>
+                </page>
+
+                <page string = "Others">
+                    <group>
+                        <field name = "notes" placeholder="Any Notes !!"/>
+                    </group>
+                </page>   
+
+            </notebook>
             </sheet>
         </form>
 
         </field>
     </record>
+
+
 
 </odoo>

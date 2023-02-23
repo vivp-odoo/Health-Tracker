@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+
+<odoo>
+
+    <record id="contact_list_form_view" model="ir.ui.view">
+
+        <field name = "name">contacts.list.form</field>
+        <field name = "model">contacts.list</field>
+        <field name = "arch" type = "xml">
+
+        <form>
+            <sheet>
+                <group>
+                    <group>
+                <field name="contact_person"/>
+                <field name="street1"/>
+                <field name="street2"/>
+                <field name="city"/>
+                <field name="state"/>
+                <field name="country"/>
+                <field name="zip"/>
+                    </group>
+                </group>
+            </sheet> 
+        </form>
+
+    </field>
+
+    </record>
+
+
+</odoo>
