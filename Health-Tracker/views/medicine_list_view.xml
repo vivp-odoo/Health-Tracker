@@ -1,0 +1,25 @@
+<?xml version ="1.0"?>
+<odoo>
+    <record id="medicine_list_action" model="ir.actions.act_window">
+        <field name = "name">Medicines</field>
+        <field name = "res_model">medicine.list</field>
+        <field name = "view_mode">tree,form</field>
+    </record>
+
+    <record id="medicine_list_view_tree" model="ir.ui.view">
+        <field name = "name">medicines.list.tree</field>
+        <field name = "model">medicine.list</field>
+        <field name = "arch" type="xml">
+            <tree editable = "bottom">
+                <field name = "name"/>
+                <field name = "dosage_from"/>
+                <field name = "doses"/>
+                <field name = "note"/>
+                <field name = "color" widget = "color_picker"/>
+            </tree>
+        
+        </field>
+    </record>
+</odoo>
+
+

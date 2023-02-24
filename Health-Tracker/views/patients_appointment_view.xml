@@ -31,6 +31,8 @@
         <form>
             <header>
                 <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                <button name="action_accept" type="object" string="Accept" class="btn btn-outline-info btn-lg"/>
+                <button name="action_refuse" type="object" string="Refuse" class="btn btn-outline-info btn-lg"/>
             </header>
 
             <sheet>
@@ -51,6 +53,7 @@
                 <group>
                     <field name ="consulting_fees"/>
                     <field name ="state"/>
+                    <field name = "date_deadline"/>
                 </group>
     
             </group>
@@ -62,16 +65,14 @@
                     <field name = "treatment" placeholder = "Treatment Method"/>
                     <field name = "admit" />
                     <field name = "next_step" placeholder = "Information"/>
-                    <field name = "medicine_prescribed" placeholder = "Medicines" widgets = "many2many_tags"/>
+                    <field name = "medicine_prescribed" placeholder = "Medicines" widget = "many2many_tags" options="{'color_field':'color'}"/>
                     <field name = "next_appointment" placeholder="Date"/>
                     <field name = "active"/>
                     </group>
                 </page>
 
                 <page string = "Medical">
-                    <group>
                         <field name = "vital_ids"/>
-                    </group>
                 </page>
 
                 <page string = "Others">
@@ -87,6 +88,30 @@
         </field>
     </record>
 
+    <record id="patients_appointment_view_search" model="ir.ui.view">
+        <field name="name">patients.appointment.search</field>
+        <field name="model">patients.appointment</field>
+        <field name="arch" type="xml">
+
+            <search>
+                <field name="patient_name" 
+                filter_domain = "[('patient_name','ilike',self)]"/>
+                <field name="contact" string="Phone no."/>
+                <field name="date"/>
+
+                <filter string="Scheduled" name="state" 
+                domain="[('state','=','scheduled')]"/>
+                <separator/>
+                <filter string="Admit" name="admit" domain="[('admit','=',True)]" />
+
+                <group>
+                    <filter string="date" name="date" context="{'group_by':'date'}"/>
+                    <filter string="status" name="state" context="{'group_by':'state'}"/>
+                </group>
+            </search>
+        </field>
+
+    </record>
 
 
 </odoo>

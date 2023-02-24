@@ -11,6 +11,7 @@ class MedicalHistory(models.Model):
     treatment = fields.Char()
     sequelae = fields.Char()
     note = fields.Char(string="Note")
-    patient_id = fields.Many2one("patients.appointment")
+    patient_medical_id = fields.Many2one("patients.list")
+    
     
     

@@ -9,7 +9,7 @@ class ContactsList(models.Model):
         string = "contact",
         selection=[('own','Patient'),('relative','Relative')]
     )
-    
+    person_name = fields.Char(string="Name")
     street1 = fields.Char()
     street2 = fields.Char()
     city = fields.Char()

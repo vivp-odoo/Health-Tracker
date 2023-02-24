@@ -37,39 +37,67 @@
         <field name ="arch" type="xml">
         <form>
             <sheet>
-            <div>
-            <h1> <field name ="name" nolabel = "1"/> </h1>
-            </div>
-            <group>
                 <group>
-                    <field name ="address"/>
-                    <field name ="state"/>
-                    <field name ="country"/>
-                    <field name ="street1"/>
-                    <field name ="street2"/>
-                    <field name ="zip"/>
-                    <field name ="date"/>
-                </group>
+                    <div>
+                        <field name="image" widget="image" options = "{'size':[150,150]}"/> 
+                        <h1> <field name ="name" placeholder = "Name" nolabel = "1"/> </h1>
+                    </div>
+                    <group>
                 <group>
                     <field name ="gender"/>
-                    <field name = "phone"/>
-                    <field name = "mobile"/>
+                    <field name ="dob"/>
+                    <field name ="age"/>
+                    <field name ="phone"/>
+                    <field name ="mobile"/>
+                    <field name ="date"/>
                     <field name ="email"/>
                 </group>
+
+                <group>
+                    <field name ="address"/>
+                    <field name ="street1"/>
+                    <field name ="street2"/>
+                    <field name ="state"/>
+                    <field name ="country"/>
+                    <field name ="zip"/>
+                </group>
+                </group>
             </group>
-            </sheet>
+            <br/> <br/>
             <notebook>
-                <page string="">
-
+                <page string="Contacts">
+                    <field name="contact_ids"/>
                 </page>
 
-                <page>
+                <page string="Insurance">
+                        <group>
+                        <field name="insurance"/>
+                        <br/>
+                        </group>
+                        <group attrs="{'invisible':[('insurance','=',False)]}">
+                        <group> <field name="insurance_company"/> 
+                        <field name="insurance_validty"/>
+                        </group>
+                        <group> <field name="insurance_name"/>
+                        <field name="insurance_number"/>
+                        <field name="insurance_detail"/>
+                        </group>
+                        </group>
                 </page>
 
-                <page>
+                 <page string="Medical History">
+                    <field name="medical_history_ids"/>
+                </page>
+
+                <page string="Others">
+                    <group>
+                    <field name="active"/>
+                    <field name="notes" />
+                    </group>
                 </page>
 
             </notebook>
+            </sheet>
         </form>
 
         </field>

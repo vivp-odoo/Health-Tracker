@@ -13,4 +13,5 @@ class RegularVitals(models.Model):
     pulse_rate = fields.Char(string="Pulse Rate")
     respiration_rate = fields.Char(string="Respiration Rate")
     note = fields.Char(required = True)
-    
+    patient_id = fields.Many2one("patients.appointment")
+        
